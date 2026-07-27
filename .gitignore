@@ -1,0 +1,11 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.lock.hcl
+*.tfvars
+
+# SSH-Schlüssel & sensible Daten
+*.pub
+*.pem
+id_ed25519*

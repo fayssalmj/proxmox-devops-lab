@@ -1,0 +1,16 @@
+- hosts: all
+  become: yes
+  tasks:
+    - name: Docker installieren
+      apt:
+        name: docker.io
+        state: present
+        update_cache: yes
+
+    - name: Test-Container starten
+      community.docker.docker_container:
+        name: mein-container
+        image: nginx:latest
+        state: started
+        published_ports:
+          - "8080:80"
